@@ -13,7 +13,6 @@
   --color-keys-light: #E5E5E5;
   --font-size-large: 60px;
   --font-size-medium: 20px;
-  --transition: all .2s ease-in-out;
 }
 
 /* main */
@@ -120,6 +119,7 @@ button {
   border-radius: 5px;
   -webkit-animation-duration: .5s;
   animation-duration: .5s;
+  transition-duration: 200ms;
 }
 
 
@@ -135,11 +135,13 @@ button {
   border-radius: 5px;
   font-size: var(--font-size-medium);
   color: #FFFFFF;
+  transition-duration: 200ms;
 }
 
 .wrong {
   background: #f7a964;
   color: #FFFFFF;
+  transition-duration: 200ms;
 }
 
 .btn__reset {

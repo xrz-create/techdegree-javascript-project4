@@ -45,7 +45,7 @@ class Game {
         this.activePhrase.addPhraseToDisplay();
     }
 
-//on click or keyboard input, it checks for match and changes button attributes accordingly
+    //on click or keyboard input, it checks for match and changes button attributes accordingly
     handleInteraction(letter){
         if (this.activePhrase.checkLetter(letter) == true) {
             for (let i = 0; i < this.activePhrase.phrase.length; i++){
@@ -57,22 +57,22 @@ class Game {
             for (let i = 0; i < changeButtonClass.length; i++) {
                 if (document.getElementsByTagName('BUTTON')[i].innerText == letter){
                     document.getElementsByTagName('BUTTON')[i].className = 'chosen';
+                    document.getElementsByTagName('BUTTON')[i].style.backgroundColor = '#78CF82';
                     document.getElementsByTagName('BUTTON')[i].setAttribute('disabled', true);
                     game.checkForWin();
                 }
             }; 
-            
         }  else {
             const changeButtonClass = document.getElementsByTagName('BUTTON');
             for (let i = 0; i < changeButtonClass.length; i++) {
                 if (document.getElementsByTagName('BUTTON')[i].innerText == letter &&
                     document.getElementsByTagName('BUTTON')[i].disabled != true){
                     document.getElementsByTagName('BUTTON')[i].className = 'wrong';
+                    document.getElementsByTagName('BUTTON')[i].style.color = 'red';
                     document.getElementsByTagName('BUTTON')[i].setAttribute('disabled', true);
                     game.removeLife();
                 }
             }; 
-            
         } 
     };
 
@@ -111,6 +111,8 @@ class Game {
                 if (buttonArrayToLoopThrough[i].className == 'wrong' ||
                     buttonArrayToLoopThrough[i].className == 'chosen'){
                     buttonArrayToLoopThrough[i].className = 'key';
+                    buttonArrayToLoopThrough[i].style.color = '';
+                    buttonArrayToLoopThrough[i].style.backgroundColor = '';
                     buttonArrayToLoopThrough[i].removeAttribute('disabled');
                 }
             }
